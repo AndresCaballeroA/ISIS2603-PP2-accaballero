@@ -10,9 +10,9 @@ import { NaveService } from '../nave.service';
 })
 export class NaveListComponent implements OnInit {
 
-  averageSeasons: number = 0;
-  averageSeasons: number = 0;
-  averageSeasons: number = 0;
+  valorImperio: number = 0;
+  valorRevelion: number = 0;
+  valorNeutral: number = 0;
   naves: Array<Nave> = []; 
   selectedNave!: Nave;
   selected = false;
@@ -27,16 +27,29 @@ export class NaveListComponent implements OnInit {
   getNavesList() {
     this.naveService.getNaves().subscribe(naves => {
       this.naves = naves;
-      this.calculateAverageSeasons();
+      this.calculateValorBando();
     });
   }
 
-  calculateAverageSeasons() {
-    let totalSeasons = 0;
-    for (let course of this.naves) {
-      totalSeasons += course.bando;
+  calculateValorBando() {
+    let totalBandoI = 0;
+    let totalBandoR = 0;
+    let totalBandoN = 0;
+    for (let nave of this.naves) {
+      if (nave.bando == "Imperio") {
+        totalBandoI += 1;
+      }
+      if (nave.bando == "Netural") {
+        totalBandoN += 1;
+      }
+      if (nave.bando == "Rebelión") {
+        totalBandoR += 1;
+      }
     }
-    this.averageSeasons = totalSeasons / this.naves.length;
+    this.valorImperio = totalBandoI;
+    this.valorNeutral = totalBandoN;
+    this.valorRevelion = totalBandoR;
+    
   }
 
   onSelected(nave: Nave): void{

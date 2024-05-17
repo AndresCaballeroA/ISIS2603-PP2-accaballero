@@ -1,14 +1,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-6">
-      <h2>TV Series</h2>
+      <h2>Naves</h2>
       <table class="table table-striped">
         <thead>
           <tr>
             <th class="h4">Id</th>
-            <th class="h4">Name</th>
-            <th class="h4">Channel</th>
-            <th class="h4">Seasons</th>
+          <th class="h4">Nombre</th>
+          <th class="h4">Fabricante</th>
+          <th class="h4">Descripción</th>
           </tr>
         </thead>
         <tbody>
@@ -17,19 +17,21 @@
               <dd>{{ p.id }}</dd>
             </td>
             <td>
-              <dd (click)="onSelected(p)">{{ p.name }}</dd>
+              <dd (click)="onSelected(p)">{{ p.nombre }}</dd>
             </td>
             <td>
-              <dd>{{ p.channel }}</dd>
+              <dd>{{ p.empresa_fabricacion }}</dd>
             </td>
             <td>
-              <dd>{{ p.seasons }}</dd>
+              <dd>{{ p.descripcion }}</dd>
             </td>
           </tr>
         </tbody>
       </table>
       <div class="container-fluid">
-        <p>Average Seasons: {{ averageSeasons }}</p>
+        <p>Naves de la revelion: {{ valorRevelion }}</p>
+        <p>Naves de la Neutruales: {{ valorNeutral }}</p>
+        <p>Naves de la Imperio: {{ valorImperio }}</p>
       </div>
     </div>
     <div class="col-6">
