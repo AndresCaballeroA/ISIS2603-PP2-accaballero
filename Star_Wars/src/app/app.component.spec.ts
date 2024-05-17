@@ -1,15 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NaveComponent } from './nave/nave.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NaveDetailComponent } from './nave/nave-detail/nave-detail.component';
+import { NaveListComponent } from './nave/nave-list/nave-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule, HttpClientModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, 
+        NaveComponent,
+        NaveDetailComponent,
+        NaveListComponent
       ],
     }).compileComponents();
   });
@@ -20,10 +27,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Star_Wars'`, () => {
+  it(`should have as title 'mynewapp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Star_Wars');
+    expect(app.title).toEqual('mynewapp');
   });
 
   it('should render title', () => {

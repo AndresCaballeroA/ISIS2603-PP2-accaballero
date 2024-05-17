@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">Id</th>
+          <th class="h4">Nombre</th>
+          <th class="h4">Fabricante</th>
+          <th class="h4">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of naves">
+          <td>
+            <dd>{{ p.id }}</dd>
+          </td>
+          <td>
+            <dd (click)="onSelected(p)">{{ p.nombre }}</dd>
+          </td>
+          <td>
+            <dd>{{ p.empresa_fabricacion }}</dd>
+          </td>
+          <td>
+            <dd>{{ p.descripcion }}</dd>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container-fluid">
+      <p>Naves de la revelion: {{ valorRevelion }}</p>
+      <p>Naves de la Neutruales: {{ valorNeutral }}</p>
+      <p>Naves de la Imperio: {{ valorImperio }}</p>
+    </div>
+  </div>
+</div>
