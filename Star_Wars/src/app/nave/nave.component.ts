@@ -33,7 +33,7 @@ export class NaveComponent implements OnInit {
       if (nave.bando == "Imperio") {
         totalBandoI += 1;
       }
-      if (nave.bando == "Netural") {
+      if (nave.bando == "Neutral") {
         totalBandoN += 1;
       }
       if (nave.bando == "Rebelión") {

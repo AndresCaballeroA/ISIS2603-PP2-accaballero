@@ -9,7 +9,7 @@ import { Nave } from './nave';
 })
 export class NaveService {
 
-  private apiUrl = environment.baseUrl + 'series.json';
+  private apiUrl = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   getNaves(): Observable<Nave[]>{
